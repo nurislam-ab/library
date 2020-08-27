@@ -8,7 +8,7 @@ function Book(title, author, pages, read) {
 }
 
 function checkBooks(library) {
-  return library.length === 0 ? 'There are no books' : '';
+  return !library.length ? 'There are no books' : '';
 }
 
 function render() {
@@ -57,10 +57,5 @@ function removeBook(index) { // eslint-disable-line no-unused-vars
 }
 
 function showForm() { // eslint-disable-line no-unused-vars
-  const form = document.getElementById('add-new-book-form');
-  if (form.style.display === 'none') {
-    form.style.display = 'block';
-  } else {
-    form.style.display = 'none';
-  }
+  document.getElementById('add-new-book-form').classList.toggle('hidden');
 }
