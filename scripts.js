@@ -40,3 +40,12 @@ function render() {
 window.onload = function () {
   render();
 }
+
+function showForm() {
+  let form = document.getElementById('add-new-book-form');
+  if (form.style.display === "none") {
+    form.style.display = "block";
+  } else {
+    form.style.display = "none";
+  }
+}
