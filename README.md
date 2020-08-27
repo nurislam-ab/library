@@ -3,7 +3,7 @@
 ## Built With
 
 -   HTML5
--   CSS3
+-   CSS3 - Used water.css tempalte for styling
 -   Javascript
 
 ## Live Demo
