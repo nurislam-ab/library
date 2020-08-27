@@ -3,18 +3,19 @@
 ## Built With
 
 -   HTML5
--   CSS3
+-   CSS3 - Used water.css tempalte for styling
 -   Javascript
 
 ## Live Demo
 
-[Work in Progress]()
+[Live Demo](https://rawcdn.githack.com/santiagorodriguezbermudez/library/bfde3cf3d3d087442bde2ddb501c5d9f2cf070a1/index.html)
 
 ## Getting Started
 
 - Fork the repository and create a local one on your computer
 - Move to the repository inside the command line using `cd` and the path to the file
 - open `index.html` file.
+- Add books to your library
 
 ## Authors
 
