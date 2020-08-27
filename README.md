@@ -8,13 +8,14 @@
 
 ## Live Demo
 
-[Work in Progress]()
+[Live Demo](https://raw.githack.com/santiagorodriguezbermudez/library/feature-implement-library/index.html)
 
 ## Getting Started
 
 - Fork the repository and create a local one on your computer
 - Move to the repository inside the command line using `cd` and the path to the file
 - open `index.html` file.
+- Add books to your library
 
 ## Authors
 
