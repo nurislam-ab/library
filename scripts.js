@@ -20,4 +20,23 @@ function addBookToLibrary() {
 
   let book = new Book(title, author, pages, read);
   myLibrary.push(book);
+  render();
+}
+
+function render() {
+  let bookList = document.getElementById('book-list');
+  bookList.innerHTML = '';
+
+  myLibrary.forEach((element) => {
+    let row = document.createElement('tr');
+    let checked = element.read ? 'checked' : '';
+    console.log(checked);
+
+    row.innerHTML = `<td>${element.title}</td> <td>${element.author}</td>\n <td>${element.pages}</td> <td><input type="checkbox" name="read" id="read" ${checked} disabled=true></td>\n`;
+    bookList.appendChild(row);
+  })
+}
+
+window.onload = function () {
+  render();
 }
