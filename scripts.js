@@ -33,7 +33,7 @@ function render() {
     row.id = index;
     let checked = element.read ? 'checked' : '';
 
-    row.innerHTML = `<td>${element.title}</td> <td>${element.author}</td>\n <td>${element.pages}</td> <td><input type="checkbox" name="read" id="read" ${checked} disabled=true></td>\n`;
+    row.innerHTML = `<td>${element.title}</td> <td>${element.author}</td>\n <td>${element.pages}</td> <td><input onclick="updateBook(${index})" type="checkbox" name="read" id="read" ${checked}></td>\n`;
     row.innerHTML += `<td><button onclick="removeBook(${index})"=>Delete Book</button></td>`;
     bookList.appendChild(row);
   })
@@ -41,6 +41,14 @@ function render() {
 
 function checkBooks (library) {
   return library.length == 0 ? 'There are no books': '';
+}
+
+function updateBook(index) {
+  let currentBook = myLibrary[index];
+  let currentStatus = currentBook.read;
+
+  newStatus = currentStatus ? false : true;
+  currentBook.read = newStatus;
 }
 
 window.onload = function () {
