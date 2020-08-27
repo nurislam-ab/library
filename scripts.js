@@ -24,20 +24,33 @@ function addBookToLibrary() {
 }
 
 function render() {
-  let bookList = document.getElementById('book-list');
-  bookList.innerHTML = '';
 
-  myLibrary.forEach((element) => {
+  let bookList = document.getElementById('book-list');
+  bookList.innerHTML = checkBooks(myLibrary);
+
+  myLibrary.forEach((element, index) => {
     let row = document.createElement('tr');
+    row.id = index;
     let checked = element.read ? 'checked' : '';
-    console.log(checked);
 
     row.innerHTML = `<td>${element.title}</td> <td>${element.author}</td>\n <td>${element.pages}</td> <td><input type="checkbox" name="read" id="read" ${checked} disabled=true></td>\n`;
+    row.innerHTML += `<td><button onclick="removeBook(${index})"=>Delete Book</button></td>`;
     bookList.appendChild(row);
   })
 }
 
+function checkBooks (library) {
+  return library.length == 0 ? 'There are no books': '';
+}
+
 window.onload = function () {
+  render();
+}
+
+function removeBook(index) {
+  let firstPart = myLibrary.slice(0, index); 
+  let secondPart = myLibrary.slice(index + 1, myLibrary.length); 
+  myLibrary = firstPart.concat(secondPart);
   render();
 }
 
